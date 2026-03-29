@@ -19,15 +19,16 @@ pipeline {
             }
         }
 
-        stage('Test') {
+        stage('Docker Build') {
             steps {
-                sh 'mvn test'
+                sh 'docker build -t siddu/java-app .'
             }
         }
 
-        stage('Archive') {
+        stage('Docker Push') {
             steps {
-                archiveArtifacts artifacts: 'target/*.jar'
+                sh 'docker login -u USER -p PASS'
+                sh 'docker push siddu/java-app'
             }
         }
     }
