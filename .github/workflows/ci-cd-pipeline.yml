@@ -34,6 +34,13 @@ jobs:
       - name: Build Maven Package
         run: mvn clean package -DskipTests
 
+      - name: Debug Files
+        run: |
+          pwd
+          ls -la
+          echo "----- TARGET -----"
+          ls -la target || echo "Target folder not found"
+            
       - name: Verify JAR Created
         run: |
           echo "Checking target directory..."
