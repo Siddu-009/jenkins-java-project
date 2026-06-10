@@ -47,5 +47,5 @@ jobs:
         context: .
         push: true
         tags: |
-          ghcr.io/${{ github.repository }}:latest
-          ghcr.io/${{ github.repository }}:${{ github.sha }}
+          ghcr.io/siddu-009/jenkins-java-project:latest
+          ghcr.io/siddu-009/jenkins-java-project:${{ github.sha }}
